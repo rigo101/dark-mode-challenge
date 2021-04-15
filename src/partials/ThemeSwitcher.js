@@ -1,12 +1,8 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faMoon, faSun} from '@fortawesome/free-solid-svg-icons';
 
-export default function ThemeSwitcher() {
-    const [darkMode, setDarkMode] = useState(false);
-
-    const handleClick = () => setDarkMode(prevState => !prevState);
-
+export default function ThemeSwitcher({darkMode, handleClick}) {
     return (
         <button className="app__dark-mode-btn icon level-right" onClick={handleClick}>
             <FontAwesomeIcon
