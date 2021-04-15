@@ -1,10 +1,17 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import ThemeSwitcher from "../partials/ThemeSwitcher";
 
 export default function App() {
     const [darkMode, setDarkMode] = useState(false);
 
-    const handleClick = () => setDarkMode(prevState => !prevState);
+    useEffect(() => {
+        setDarkMode(localStorage.getItem('darkMode'))
+    }, [])
+
+    const handleClick = () => {
+        localStorage.setItem('darkMode', !darkMode);
+        setDarkMode(prevState => !prevState);
+    }
 
     return (
         <div className={`app ${darkMode ? 'dark-mode' : ''}`}>
