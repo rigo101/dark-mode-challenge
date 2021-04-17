@@ -3,9 +3,9 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faMoon, faSun} from '@fortawesome/free-solid-svg-icons';
 
 interface ThemeSwitcherProps {
-    darkMode: string,
+    darkMode: boolean,
     handleClick: MouseEventHandler
-}
+};
 
 // export default function ThemeSwitcher({darkMode, handleClick} : ThemeSwitcherProps) {
 const ThemeSwitcher: React.FC<ThemeSwitcherProps> = ({darkMode, handleClick}) => {
@@ -17,6 +17,6 @@ const ThemeSwitcher: React.FC<ThemeSwitcherProps> = ({darkMode, handleClick}) =>
             />
         </button>
     );
-}
+};
 
 export default ThemeSwitcher;

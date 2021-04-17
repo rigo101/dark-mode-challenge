@@ -1,7 +1,11 @@
 import React, {useState} from 'react';
 import ThemeSwitcher from "../partials/ThemeSwitcher";
 
-export default function App({themeProps}) {
+interface AppProps {
+    themeProps: 'light' | 'dark' | null
+};
+
+const App: React.FC<AppProps> = ({themeProps}) => {
     const [darkMode, setDarkMode] = useState(themeProps==='dark'); //null before setting localStorage
 
     const handleClick = () => {
@@ -62,4 +66,6 @@ export default function App({themeProps}) {
             </section>
         </div>
     );
-}
+};
+
+export default App;
