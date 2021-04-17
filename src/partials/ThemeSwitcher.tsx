@@ -1,8 +1,13 @@
-import React from 'react';
+import React, { MouseEventHandler } from 'react';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faMoon, faSun} from '@fortawesome/free-solid-svg-icons';
 
-export default function ThemeSwitcher({darkMode, handleClick}) {
+interface ThemeSwitcherProps {
+    darkMode: string,
+    handleClick: MouseEventHandler
+}
+
+export default function ThemeSwitcher({darkMode, handleClick} : ThemeSwitcherProps) {
     return (
         <button className="app__dark-mode-btn icon level-right" onClick={handleClick}>
             <FontAwesomeIcon
