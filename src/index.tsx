@@ -8,9 +8,9 @@ import './sass/_main.scss';
 // localStorage persists data as string
 
 // theme expects three values: 'light' or 'dark' or null
-// skips the componentDidMount(useEffect) in App, prevents re-render
+// reading the localStorage here, skips the componentDidMount(useEffect) in App and thus prevents re-render
 
-const theme = localStorage.getItem('theme');
+const theme = localStorage.getItem('theme') as Theme;
 
 ReactDOM.render(
     <AppContainer>

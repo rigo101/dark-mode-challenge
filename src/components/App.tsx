@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import ThemeSwitcher from "../partials/ThemeSwitcher";
 
 interface AppProps {
-    themeProps: 'light' | 'dark' | null
+    themeProps: Theme
 };
 
 const App: React.FC<AppProps> = ({themeProps}) => {
