@@ -7,7 +7,8 @@ interface ThemeSwitcherProps {
     handleClick: MouseEventHandler
 }
 
-export default function ThemeSwitcher({darkMode, handleClick} : ThemeSwitcherProps) {
+// export default function ThemeSwitcher({darkMode, handleClick} : ThemeSwitcherProps) {
+const ThemeSwitcher: React.FC<ThemeSwitcherProps> = ({darkMode, handleClick}) => {
     return (
         <button className="app__dark-mode-btn icon level-right" onClick={handleClick}>
             <FontAwesomeIcon
@@ -17,3 +18,5 @@ export default function ThemeSwitcher({darkMode, handleClick} : ThemeSwitcherPro
         </button>
     );
 }
+
+export default ThemeSwitcher;
