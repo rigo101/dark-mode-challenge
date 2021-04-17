@@ -1,16 +1,15 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import ThemeSwitcher from "../partials/ThemeSwitcher";
 
-export default function App() {
-    const [darkMode, setDarkMode] = useState(false);
-
-    useEffect(() => {
-        setDarkMode(localStorage.getItem('darkMode'))
-    }, [])
+export default function App({themeProps}) {
+    const [darkMode, setDarkMode] = useState(themeProps==='dark'); //null before setting localStorage
 
     const handleClick = () => {
-        localStorage.setItem('darkMode', !darkMode);
-        setDarkMode(prevState => !prevState);
+        setDarkMode(prevState => {
+            const newState = !prevState;
+            localStorage.setItem('theme', newState ? 'dark' : 'light' );
+            return newState;
+        })
     }
 
     return (
