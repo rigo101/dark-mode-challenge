@@ -6,14 +6,7 @@ interface AppProps {};
 
 const App: React.FC<AppProps> = () => {
 
-    // const handleClick = () => {
-    //     setDarkMode(prevState => {
-    //         const newState = !prevState;
-    //         // localStorage.setItem('theme', newState ? 'dark' : 'light' );
-    //         return newState;
-    //     })
-    // }
-    const darkMode = useSelector((state: UI_Interface) => state.darkTheme);
+    const darkMode = useSelector((state: InitialState) => state.darkTheme);
 
     return (
         <div className={`app ${darkMode ? 'dark-mode' : ''}`}>
