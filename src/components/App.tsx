@@ -1,20 +1,19 @@
-import React, {useState} from 'react';
-import ThemeSwitcher from "../partials/ThemeSwitcher";
+import React from 'react';
+import ThemeSwitcher from "./ThemeSwitcher";
+import { useSelector } from 'react-redux';
 
-interface AppProps {
-    themeProps: Theme
-};
+interface AppProps {};
 
-const App: React.FC<AppProps> = ({themeProps}) => {
-    const [darkMode, setDarkMode] = useState(themeProps==='dark'); //null before setting localStorage
+const App: React.FC<AppProps> = () => {
 
-    const handleClick = () => {
-        setDarkMode(prevState => {
-            const newState = !prevState;
-            localStorage.setItem('theme', newState ? 'dark' : 'light' );
-            return newState;
-        })
-    }
+    // const handleClick = () => {
+    //     setDarkMode(prevState => {
+    //         const newState = !prevState;
+    //         // localStorage.setItem('theme', newState ? 'dark' : 'light' );
+    //         return newState;
+    //     })
+    // }
+    const darkMode = useSelector((state: UI_Interface) => state.darkTheme);
 
     return (
         <div className={`app ${darkMode ? 'dark-mode' : ''}`}>
@@ -24,7 +23,7 @@ const App: React.FC<AppProps> = ({themeProps}) => {
                     <div className="morningscore-avatar"></div>
                     <h1 className="title">Dark Mode Challenge</h1>
                 </div>
-                <ThemeSwitcher darkMode={darkMode} handleClick={handleClick} />
+                <ThemeSwitcher darkMode={darkMode} />
             </div>
 
 
