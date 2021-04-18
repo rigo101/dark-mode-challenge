@@ -3,7 +3,7 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 import rootReducer from './rootReducer';
 
 // Web Storage is an API to store data in the browser
-// localStorage persists data as string
+// localStorage persists data value as string
 // theme expects three values: 'light' or 'dark' or null
 
 const storedTheme = localStorage.getItem('theme') === 'dark';

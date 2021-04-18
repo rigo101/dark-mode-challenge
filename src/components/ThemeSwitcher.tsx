@@ -1,7 +1,7 @@
 import React from 'react';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faMoon, faSun} from '@fortawesome/free-solid-svg-icons';
-import * as actions from '../actions';
+import * as actions from '../redux/actions';
 import { useDispatch } from 'react-redux';
 
 interface ThemeSwitcherProps {
