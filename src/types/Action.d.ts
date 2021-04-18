@@ -1,0 +1,1 @@
+type Action = { type: string };

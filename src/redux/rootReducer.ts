@@ -1,6 +1,6 @@
 import { TOGGLE_THEME } from './constants';
 
-const rootReducer = (state, action) => {
+const rootReducer = (state: InitialState, action: Action) => {
     switch (action.type) {
         case TOGGLE_THEME:
             return { ...state, darkTheme: !state.darkTheme };
